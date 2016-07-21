@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memo">
+<insert id="create" parameterType="memoVO">
+INSERT INTO memo(memono, title, content, wdate)
+values(memo_seq.nextval, #{title}, #{content}, sysdate)    
+</insert>
+
+<select id="read" parameterType="int" resultType="memoVO">
+select * From memo Where memono = #{memono}
+</select>
+
+<update id="update" parameterType="memoVO">
+UPDATE memo  
+SET title = #{title},
+content = #{content} 
+WHERE memono = #{memono}
+</update>
+
+<delete id="delete" parameterType="int">
+delete from memo
+where memono=#{memono}
+</delete>
+
+<select id="list" parameterType="Map" resultType="memoVO">
+select memono, title,content,viewcnt,to_char(wdate,'yyyy-mm-dd')wdate, r
+from(                                                               
+	select memono, title,content, viewcnt,wdate,rownum r             
+	from(                                                           
+		select memono, title, content,viewcnt,wdate                  
+		from MEMO                                                   
+<where>
+<choose>
+<when test="col=='title'">
+title like '%'||#{word}||'%'
+</when>
+<when test="col=='wdate'">
+wdate like '%'||#{word}||'%'
+</when>
+<when test="col=='hit'">
+hit like '%'||#{word}||'%'
+</when>
+</choose>
+</where>                                                                                         
+		order by memono desc                                        
+	 )                                                               
+ )   
+ <![CDATA[                                                               
+	 where r>=#{sno} and r<=#{eno}
+	 ]]>                                          
+</select>
+
+<select id="total" parameterType="Map" resultType="int">
+select count(*) from memo
+<where>
+<choose>
+<when test="col=='title'">
+title like '%'||#{word}||'%'
+</when>
+<when test="col=='wdate'">
+wdate like '%'||#{word}||'%'
+</when>
+<when test="col=='hit'">
+hit like '%'||#{word}||'%'
+</when>
+</choose>
+</where>
+</select>
+
+<update id="upViewcnt" parameterType="int">
+update memo        
+set viewcnt = viewcnt + 1
+where memono = #{memono}
+</update>
+</mapper>
