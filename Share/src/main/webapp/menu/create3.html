@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html{padding: 50px 250px
+}
+tr td{padding: 20px}
+</style>
+</head>
+<body>
+
+	<h1>카풀 등록하기</h1>
+	<table style="width: 100%;border:1px solid gray;">
+	<tr>
+	<td>차내흡연여부: </td>
+	<td >
+		<span id='차내흡연' style="float:left;border: 1px solid gray;width:49%;
+		display: inline-block;text-align: center;padding: 25% 0px">차내흡연</span>
+		<span id='차내금연' style="float:left;border: 1px solid gray;width:49%;
+		display: inline-block;text-align: center;padding: 25% 0px">차내금연</span>
+	</td>
+	<td rowspan="5" width="40%" style="padding-left: 100px"><div id='map' style="width:300px;height:400px;"></div>
+	</td>
+	</tr>
+	<tr>
+	<td>추가내용 : </td>
+	<td>
+	<textarea rows="12" cols="61">
+차종:
+
+카풀운행주기:
+
+연락처(전화번호,카톡):
+
+기타내용:
+
+	</textarea>
+	</td>
+	</tr>
+	</table>
+	<br><div align="center"><input type="button" value="이전" style="border:1px solid ;width: 200px;height: 35px"><input type="button" value="완료" style="border:1px solid ;width: 200px;height: 35px;margin-left: 60px"></div>
+<!-- 여기 jquery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+<script type="text/javascript">
+$("#차내흡연").click(
+		function(){$("#차내흡연").css("background-color","#d0d0ff"),$("#차내금연").css("background-color","#ffffff")});
+$("#차내금연").click(
+		function(){$("#차내금연").css("background-color","#d0d0ff"),$("#차내흡연").css("background-color","#ffffff")}
+		);
+</script>
+</body>
+</html>
