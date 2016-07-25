@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html{padding: 50px 250px
+}
+tr td{padding: 20px}
+</style>
+</head>
+<body>
+
+	<h1>카풀 등록하기</h1>
+	<table style="width: 100%;border:1px solid gray;">
+	<tr>
+	<td>출발일시 : </td>
+	<td >
+		출발날짜와 시간을 선택해주세요<br><br>
+<input type="date"style="border: none; border: 1px solid #d8d8d8; width: 40%; height: 35px">
+	<select name='time1' id='time1'
+				style="border: none; border: 1px solid #d8d8d8; width: 15%; height: 35px">
+				<option value="1">오전</option>
+				<option value="2">오후</option>
+	</select>
+	<select name='time2' id='time2'
+				style="border: none; border: 1px solid #d8d8d8; width: 15%; height: 35px">
+				<option value="1">1시</option>
+				<option value="2">2시</option>
+				<option value="3">3시</option>
+				<option value="4">4시</option>
+				<option value="5">5시</option>
+				<option value="6">6시</option>
+				<option value="7">7시</option>
+				<option value="8">8시</option>
+				<option value="9">9시</option>
+				<option value="10">10시</option>
+				<option value="11">11시</option>
+				<option value="12">12시</option>
+	</select>
+	<select name='time3' id='time3'
+				style="border: none; border: 1px solid #d8d8d8; width: 15%; height: 35px">
+				<option value="1">0분</option>
+				<option value="2">5분</option>
+				<option value="3">10분</option>
+				<option value="4">15분</option>
+				<option value="5">20분</option>
+				<option value="6">25분</option>
+				<option value="7">30분</option>
+				<option value="8">35분</option>
+				<option value="9">40분</option>
+				<option value="10">45분</option>
+				<option value="11">50분</option>
+				<option value="12">55분</option>
+	</select>
+
+		
+	</td>
+	<td rowspan="5" width="40%" style="padding-left: 100px"><div id='map' style="width:300px;height:400px;"></div>
+	</td>
+	</tr>
+	<tr>
+	
+	<td>
+	인원수 : </td>
+	<td>
+	인원수를 입력해주세요<br><br>
+	<input type="text"style="border: none; border: 1px solid #d8d8d8; width: 15%; height: 35px">명
+	</td>
+	</tr>
+	<tr>
+	<td>금액 : </td>
+	<td>
+	1인당 편도 금액을 입력해주세요<br><br>
+	<input type="text"style="border: none; border: 1px solid #d8d8d8; width: 15%; height: 35px">원/인당
+	</td>
+	</tr>
+	</table>
+	<br><div align="center"><input type="button" value="이전" style="border:1px solid ;width: 200px;height: 35px"><input type="button" value="다음" style="border:1px solid ;width: 200px;height: 35px;margin-left: 60px"></div>
+</body>
+</html>
