@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="imgreply">
+<select id="rcount" parameterType="int" resultType="int">
+     SELECT count(*) FROM imgreply
+     WHERE imgno = #{imgno}
+    </select> 
+ 
+<insert id="create" parameterType="ImgReplyDTO">
+<selectKey keyProperty="rnum" resultType="int" order="BEFORE">
+select nvl(max(rnum),0)+1 from imgreply 
+</selectKey>
+insert into imgreply(rnum, content, regdate, id, imgno)
+values(#{rnum}, #{content}, sysdate, #{id}, #{imgno}) 
+</insert>
+ 
+<select id="read" parameterType="int" resultType="ImgReplyDTO">
+select * from imgreply
+where rnum = #{rnum}
+</select>
+ 
+<update id="update" parameterType="ImgReplyDTO">
+update imgreply
+set content = #{content}
+where rnum = #{rnum}
+ 
+</update>
+ 
+<delete id="delete" parameterType="int">
+delete from imgreply
+where rnum = #{rnum}
+</delete>
+<delete id="bdelete" parameterType="int">
+delete from imgreply
+where imgno = #{imgno}
+</delete>
+<select id="list" parameterType="Map" resultType="ImgReplyDTO">
+select rnum, content, to_char(regdate,'yyyy-mm-dd') regdate, id, imgno, r
+FROM(
+select rnum, content, regdate, id, imgno, rownum r
+FROM(
+select rnum, content, regdate, id, imgno
+from imgreply
+where imgno = #{imgno}
+order by rnum DESC
+   )
+<![CDATA[
+)WHERE r >= #{sno} and r <= #{eno}
+]]>
+</select>
+ 
+<select id="total" resultType="int" parameterType="int">
+select count(*) from imgreply
+where imgno=#{imgno}
+</select>
+ 
+</mapper>

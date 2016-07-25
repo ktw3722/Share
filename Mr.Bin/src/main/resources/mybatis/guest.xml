@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="guest">
+
+<insert id="create" parameterType="map">
+insert into GUEST (                  
+guestno,mname,content,wdate)          
+values(                               
+(select nvl(max(guestno),0)+1 from GUEST),
+#{mname},#{content},#{wdate})                               
+</insert>
+
+<select id="read" parameterType="int" resultType="GuestDTO">
+SELECT *     
+FROM guest   
+WHERE guestno = #{guestno}
+</select>
+
+<select id="list" resultType="GuestDTO">
+SELECT * from guest 
+order by guestno DESC
+</select>
+</mapper>
