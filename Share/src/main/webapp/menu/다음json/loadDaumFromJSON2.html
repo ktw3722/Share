@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>XML JSON으로부터 객체 생성</title>
+    <script type="text/javascript" src="httpRequest.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+    	sendRequest("https://apis.daum.net/local/v1/search/keyword.json?apikey=0c30b26bc118d624e0b4ddc88f6cadd1&query=cafe", "", viewInfo, "get");
+    }
+    function viewInfo() {
+        if (httpRequest.readyState == 4) {
+            if (httpRequest.status == 200) {
+                // 응답을 XML로 받음
+                var docXML = httpRequest.responseXML;
+             
+ 
+                // code 태그 추출
+                var code = docXML.getElementsByTagName("code")
+                                 .item(0).firstChild.nodeValue;
+                if (code == 'success') {
+                    // data 태그 추출
+                    var dataJSON = docXML.getElementsByTagName("data")
+                                     .item(0).firstChild.nodeValue;
+                    // JSON으로 인식 처리
+                    var data = eval("("+dataJSON+")");
+                    alert(data.name + "[" + data.id +"]");
+                } else {
+                    alert("실패");
+                }
+            } else {
+                alert("에러 발생:"+httpRequest.status);
+            }
+        }
+    }
+ 
+    </script>
+</head>
+<body>
+</body>
+</html>

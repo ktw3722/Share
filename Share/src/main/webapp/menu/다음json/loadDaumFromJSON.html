@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JSON으로부터 객체 생성</title>
+    <script type="text/javascript" src="httpRequest.js"></script>
+    <script type="text/javascript">
+    
+   
+    window.onload = function() {
+        // 요청 URL, 파라미터, 콜백 처리 함수, 전송 메소드 방식
+        sendRequest("daum_json.jsp", "", viewInfo, "get");
+    }
+ 
+    // 응답 처리 메소드, req = Request 클래스에서 만든 XMLHttpRequest의 객체
+    function viewInfo() {
+    	log(httpRequest.status);
+        if (httpRequest.readyState == 4) {
+            if (httpRequest.status == 200) {
+                
+                // JSON 표기법 문자열로 인식
+               var result = eval("(" + httpRequest.responseText + ")");
+               
+
+                // 받아온 결과가 있으면             
+                if (result.channel != null) {
+                
+                    //data.member에 해당
+                    var m = result.channel.item;
+                    for(i=0; i< m.length; i++){
+                       alert(m[i].phone);
+                    }
+                } else {
+                    alert("실패");
+                }
+            } else {
+                alert("에러 발생:"+httpRequest.status);
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+<!-- 디버깅 정보를 출력하는 DIV 태그 -->
+<div id="debugConsole" 
+     style="border: 1px solid #000000; color:#00ff00; background:#000000 ">
+</div>
+
+<input type = "button" onclick="maptest()" value="테스트메세지창">
+</body>
+</html>
