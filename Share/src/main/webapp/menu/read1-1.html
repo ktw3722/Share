@@ -26,7 +26,7 @@ tr td {
 			<td valign="top" rowspan="5" width="20%" style="padding-left: 100px">
 				<table border="1" style="width: 200px; border-collapse: collapse;">
 					<tr>
-						<td align="center"><img alt="사진" src="../image/photo.jpg">
+						<td align="center"><img alt="사진" src="../images/photo.jpg">
 							<br>홍길동 <br>인증내역 1개 <br>-이메일</td>
 					</tr>
 					<tr>
@@ -86,11 +86,11 @@ tr td {
 			<h3>평가</h3>
 			<div align="center" style="border:0px solid;background-color:gray;border-radius:5px"><br>상대방을 평가해 주세요. (예약을 하거나 메시지를 주고 받은 상대방을 평가 할 수 있습니다.)<br>
 			<br>
-			<img id="star1" alt="별" src="../image/별0.png">
-			<img id="star2" alt="별" src="../image/별0.png">
-			<img id="star3" alt="별" src="../image/별0.png">
-			<img id="star4" alt="별" src="../image/별0.png">
-			<img id="star5" alt="별" src="../image/별0.png">
+			<img id="star1" alt="별" src="../images/별0.png">
+			<img id="star2" alt="별" src="../images/별0.png">
+			<img id="star3" alt="별" src="../images/별0.png">
+			<img id="star4" alt="별" src="../images/별0.png">
+			<img id="star5" alt="별" src="../images/별0.png">
 			<br><br>
 			</div>
 			</td>
@@ -110,22 +110,22 @@ tr td {
 <!--     여기 Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
-	$("#star1").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png"),
-		$(this).attr("src","../image/별1.png")})
-	$("#star2").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png"),
+	$("#star1").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png"),
+		$(this).attr("src","../images/별1.png")})
+	$("#star2").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png"),
 		$("#star1").trigger("click"),
-		$(this).attr("src","../image/별1.png")})
-	$("#star3").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png"),
+		$(this).attr("src","../images/별1.png")})
+	$("#star3").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png"),
 		$("#star1").trigger("click"),$("#star2").trigger("click"),
-		$(this).attr("src","../image/별1.png")})
-	$("#star4").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png"),
+		$(this).attr("src","../images/별1.png")})
+	$("#star4").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png"),
 		$("#star1").trigger("click"),$("#star2").trigger("click"),$("#star3").trigger("click"),
-		$(this).attr("src","../image/별1.png")})
-	$("#star5").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png"),
+		$(this).attr("src","../images/별1.png")})
+	$("#star5").click(function(){$("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png"),
 		$("#star1").trigger("click"),$("#star2").trigger("click"),$("#star3").trigger("click"),$("#star4").trigger("click"),
-		$(this).attr("src","../image/별1.png")})
+		$(this).attr("src","../images/별1.png")})
     $("#star1,#star2,#star3,#star4,#star5").dblclick(function(){
-        $("#star1,#star2,#star3,#star4,#star5").attr("src","../image/별0.png")
+        $("#star1,#star2,#star3,#star4,#star5").attr("src","../images/별0.png")
     });
 </script>
 	<!-- 다음 지도 -->
