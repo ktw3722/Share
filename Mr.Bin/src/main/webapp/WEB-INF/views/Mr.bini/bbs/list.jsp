@@ -52,7 +52,9 @@ function read(bbsno){
 		</c:when>
 		<c:otherwise>
 		<c:forEach items="${list}" var="dto">
-		<c:set var="rcount" value="${util:rcount(dto.bbsno,rdao) }"/>
+		<c:set var="bbsno" value="${dto.bbsno}"/>
+		<c:set var="rdao" value="${rdao}"/>
+		<c:set var="rcount" value="${util:rcount(bbsno,rdao) }"/>
 		<tr>
 			<td rowspan="3" >&emsp;&emsp;${dto.bbsno}&emsp;&emsp;</td>
 			<th colspan="3" align="left" style="width: 520px">
