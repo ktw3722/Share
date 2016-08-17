@@ -52,9 +52,7 @@ function read(bbsno){
 		</c:when>
 		<c:otherwise>
 		<c:forEach items="${list}" var="dto">
-		<c:set var="bbsno" value="${dto.bbsno}"/>
-		<c:set var="rdao" value="${rdao}"/>
-		<c:set var="rcount" value="${util:rcount(bbsno,rdao) }"/>
+		<c:set var="rcount" value="${util:rcount(dto.bbsno,rdao)}"/>
 		<tr>
 			<td rowspan="3" >&emsp;&emsp;${dto.bbsno}&emsp;&emsp;</td>
 			<th colspan="3" align="left" style="width: 520px">
@@ -66,7 +64,7 @@ function read(bbsno){
 					<c:forEach begin="1" end="${dto.indent}">
 					&nbsp;&nbsp;
 					</c:forEach>
-					<c:if test="${dto.indent}>0">[답변]${dto.title}</c:if>
+					<c:if test="${dto.indent}>0">[답변]</c:if>${dto.title}
 					<c:if test="${rcount>0}">(${rcount})</c:if>		
 			</a>
 			      <c:if test="${util:newImg(fn:substring(dto.wdate,0,10))}">

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE  tiles-definitions PUBLIC 
+    "-//Aapche Software Foundation//DTD Tiles Configuration 2.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+
+<tiles-definitions> 
+     <definition name="main" template="/WEB-INF/views/template/template.jsp"> 
+        <put-attribute name="top" value="/WEB-INF/views/template/top.jsp" /> 
+        <put-attribute name="bottom" value="/WEB-INF/views/template/bottom.jsp" /> 
+    </definition> 
+<!--     게시판 페이지 -->
+    <definition name="/home" extends="main"> 
+        <put-attribute name="title" value="Spring4 기본페이지" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/home.jsp" /> 
+    </definition> 
+<definition name="/bbs/list" extends="main"> 
+        <put-attribute name="title" value="Spring4 Blog 게시판" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/list.jsp" /> 
+    </definition>   
+    <definition name="/bbs/create" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 글생성" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/createForm.jsp" /> 
+    </definition>   
+    <definition name="/bbs/read" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 글읽기" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/read.jsp" /> 
+    </definition>  
+    <definition name="/bbs/update" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 수정" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/updateForm.jsp" /> 
+    </definition>  
+    <definition name="/bbs/reply" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example BLog 답변" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/replyForm.jsp" /> 
+    </definition>  
+    <definition name="/bbs/delete" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example board 삭제" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/Mr.bini/bbs/deleteForm.jsp" /> 
+    </definition>  
+           
+   
+</tiles-definitions> 

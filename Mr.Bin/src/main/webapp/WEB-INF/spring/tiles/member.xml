@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE  tiles-definitions PUBLIC 
+    "-//Aapche Software Foundation//DTD Tiles Configuration 2.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+
+<tiles-definitions> 
+     <definition name="main" template="/WEB-INF/views/template/template.jsp"> 
+        <put-attribute name="header" value="/WEB-INF/views/template/top.jsp" /> 
+        <put-attribute name="footer" value="/WEB-INF/views/template/bottom.jsp" /> 
+    </definition> 
+<!--     멤버 페이지 -->
+<definition name="/login" extends="main"> 
+        <put-attribute name="title" value="Spring4 Blog 로그인" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp" /> 
+    </definition>   
+<definition name="/loginProc" extends="main"> 
+        <put-attribute name="title" value="Spring4 Blog 로그인 결과" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/loginProc.jsp" /> 
+    </definition>   
+<definition name="/member/list" extends="main"> 
+        <put-attribute name="title" value="Spring4 Blog 회원리스트" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/list.jsp" /> 
+    </definition>   
+    <definition name="/member/agree" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 약관동의" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/agreement.jsp" /> 
+    </definition>   
+    <definition name="/member/create" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 회원가입" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/createForm.jsp" /> 
+    </definition>   
+    <definition name="/member/createProc" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 회원가입결과" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/createProc.jsp" /> 
+    </definition>   
+    <definition name="/member/read" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 회원정보" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/read.jsp" /> 
+    </definition>  
+    <definition name="/member/update" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 정보수정" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/updateForm.jsp" /> 
+    </definition>  
+    <definition name="/member/updateFile" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 사진수정" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/updateFileForm.jsp" /> 
+    </definition>  
+    <definition name="/member/updatePw" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example Blog 비밀번호수정" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/updatePwForm.jsp" /> 
+    </definition>  
+    <definition name="/member/delete" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example board 회원탈퇴" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/deleteForm.jsp" /> 
+    </definition>  
+    <definition name="/member/idFind" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example BLog 아이디 찾기" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/idFindForm.jsp" /> 
+    </definition>  
+    <definition name="/member/idFindProc" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example BLog 아이디 찾기 결과" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/idFindProc.jsp" /> 
+    </definition>  
+    <definition name="/member/pwFind" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example BLog 비밀번호 찾기" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/pwFindForm.jsp" /> 
+    </definition>  
+    <definition name="/member/pwFindProc" extends="main"> 
+        <put-attribute name="title" value="Spring4 Example BLog 비밀번호 찾기 결과" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/member/pwFindProc.jsp" /> 
+    </definition>  
+           
+   
+</tiles-definitions> 

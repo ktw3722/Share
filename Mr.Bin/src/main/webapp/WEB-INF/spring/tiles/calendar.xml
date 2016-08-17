@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE  tiles-definitions PUBLIC 
+    "-//Aapche Software Foundation//DTD Tiles Configuration 2.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+
+<tiles-definitions> 
+     <definition name="main" template="/WEB-INF/views/template/template.jsp"> 
+        <put-attribute name="header" value="/WEB-INF/views/template/top.jsp" /> 
+        <put-attribute name="footer" value="/WEB-INF/views/template/bottom.jsp" /> 
+    </definition> 
+    <definition name="/cal/create" extends="main"> 
+        <put-attribute name="title" value="일정 등록" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/calendar/createForm.jsp" /> 
+    </definition> 
+    <definition name="/cal/msgView" extends="main"> 
+        <put-attribute name="title" value="일정 등록 결과" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/calendar/msgView.jsp" /> 
+    </definition> 
+    <definition name="/cal/list" extends="main"> 
+        <put-attribute name="title" value="일정 리스트" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/calendar/list.jsp" /> 
+    </definition> 
+    <definition name="/cal/update" extends="main"> 
+        <put-attribute name="title" value="일정 수정" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/calendar/updateForm.jsp" /> 
+    </definition> 
+    
+    <definition name="/cal/calendar" extends="main"> 
+        <put-attribute name="title" value="달력 보기" ></put-attribute> 
+        <put-attribute name="body" value="/WEB-INF/views/calendar/calendar.jsp" /> 
+    </definition> 
+
+           
+   
+</tiles-definitions> 

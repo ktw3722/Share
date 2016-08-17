@@ -33,7 +33,7 @@ public class Paging {
  
     int _nowPage = (nowGrp-1) * pagePerBlock; // 10개 이전 페이지로 이동 
     if (nowGrp >= 2){ 
-      str.append("[<A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A>]"); 
+      str.append("[<A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A>]"); 
     } 
  
     for(int i=startPage; i<=endPage; i++){ 

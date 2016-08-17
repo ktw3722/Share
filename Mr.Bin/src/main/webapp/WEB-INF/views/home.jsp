@@ -13,13 +13,11 @@ String root = request.getContextPath();
 <link rel="stylesheet" href="<%=root %>/css/loginbar.css">
 </head>
 <body>
-<jsp:include page="/menu/top.jsp"/>
 <div class='article_skin'>
 <div >
 <img src="menu/images/images.jpg" width="500px"; height="300px"><br>
 <div>이번 년도는 어디로 피서를 갈까?</div>
 </div> 
 </div>
-<jsp:include page="/menu/bottom.jsp"/>
 </body>
 </html> 

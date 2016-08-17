@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import spring.model.bbs.BbsDAO;
 import spring.model.bbs.BbsDTO;
-import spring.model.img.ImgReplyDAO;
+import spring.model.bbs.ReplyDAO;
 import spring.utility.mrbin.Paging;
 import spring.utility.mrbin.Utility;
 
@@ -25,7 +25,8 @@ public class BbsController {
 	@Autowired
 	private BbsDAO dao;
 	@Autowired
-	private ImgReplyDAO rdao;
+	private ReplyDAO rdao;
+	
 	@RequestMapping("/bbs/list")
 	public String list(HttpServletRequest request,Model model){
 		int nowPage=1;//현재페이지
@@ -56,6 +57,6 @@ public class BbsController {
 		model.addAttribute("col", col);
 		model.addAttribute("word", word);
 		model.addAttribute("nowPage", nowPage);
-		return "Mr.bini/bbs/list";
+		return "/bbs/list";
 	}
 }

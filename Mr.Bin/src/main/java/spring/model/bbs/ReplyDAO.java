@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ReplyDAO {
 	@Autowired
-	private static SqlSessionTemplate mybatis;
+	private  SqlSessionTemplate mybatis;
 	
-	public static void setMybatis(SqlSessionTemplate mybatis) {
-	ReplyDAO.mybatis = mybatis;
+	public void setMybatis(SqlSessionTemplate mybatis) {
+		this.mybatis = mybatis;
 	}
 
 	public int rcount(int bbsno){
-	    return mybatis.selectOne("reply.rcount", bbsno);
+		return mybatis.selectOne("reply.rcount", bbsno);
 	}
 	
 	public boolean create(ReplyDTO dto) {
