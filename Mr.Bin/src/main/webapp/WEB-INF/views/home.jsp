@@ -15,7 +15,7 @@ String root = request.getContextPath();
 <body>
 <div class='article_skin'>
 <div >
-<img src="menu/images/images.jpg" width="500px"; height="300px"><br>
+<img src="${pageContext.request.contextPath}/image/images.jpg" width="500px"; height="300px"><br>
 <div>이번 년도는 어디로 피서를 갈까?</div>
 </div> 
 </div>

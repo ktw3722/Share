@@ -44,14 +44,14 @@ public class Paging {
       if (nowPage == i){ // 현재 페이지이면 강조 효과 
         str.append("<span style='font-size: 1.2em; font-weight: bold;'>"+i+"</span> ");   
       }else{ 
-        str.append("<A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A> "); 
+        str.append("<A href='./list?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A> "); 
       } 
        
     } 
      
     _nowPage = (nowGrp * pagePerBlock)+1; // 10개 다음 페이지로 이동 
     if (nowGrp < totalGrp){ 
-      str.append("[<A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A>]"); 
+      str.append("[<A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A>]"); 
     } 
     str.append("</DIV>"); 
      
@@ -111,7 +111,7 @@ public class Paging {
  
     int _nowPage = (nowGrp-1) * pagePerBlock; // 10개 이전 페이지로 이동 
     if (nowGrp >= 2){ 
-      str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A></span>"); 
+      str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A></span>"); 
     } 
  
     for(int i=startPage; i<=endPage; i++){ 
@@ -122,13 +122,13 @@ public class Paging {
       if (nowPage == i){ 
         str.append("<span class='span_box_2'>"+i+"</span>"); 
       }else{ 
-        str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A></span>");   
+        str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A></span>");   
       } 
     } 
      
     _nowPage = (nowGrp * pagePerBlock)+1; // 10개 다음 페이지로 이동 
     if (nowGrp < totalGrp){ 
-      str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A></span>"); 
+      str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A></span>"); 
     } 
     str.append("</DIV>"); 
      
@@ -187,7 +187,7 @@ public class Paging {
  
     int _nowPage = (nowGrp-1) * pagePerBlock; // 10개 이전 페이지로 이동 
     if (nowGrp >= 2){ 
-      str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A></span>"); 
+      str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>이전</A></span>"); 
     } 
  
     for(int i=startPage; i<=endPage; i++){ 
@@ -198,13 +198,13 @@ public class Paging {
       if (nowPage == i){ 
         str.append("<span class='span_box_2'>"+i+"</span>"); 
       }else{ 
-        str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A></span>");   
+        str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+i+"'>"+i+"</A></span>");   
       } 
     } 
      
     _nowPage = (nowGrp * pagePerBlock)+1; // 10개 다음 페이지로 이동 
     if (nowGrp < totalGrp){ 
-      str.append("<span class='span_box_1'><A href='./list.jsp?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A></span>"); 
+      str.append("<span class='span_box_1'><A href='./list?col="+col+"&word="+word+"&nowPage="+_nowPage+"'>다음</A></span>"); 
     } 
     str.append("</DIV>"); 
      

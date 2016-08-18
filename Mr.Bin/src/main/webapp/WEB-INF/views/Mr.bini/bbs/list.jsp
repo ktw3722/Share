@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="util" uri="/ELFunctions" %>
-<% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +9,11 @@
 <title></title>
 <script type="text/javascript">
 function read(bbsno){
-	var url="read.jsp";
+	var url="read";
 	url+="?bbsno="+bbsno;
 	url+="&col=${col}";
 	url+="&word=${word}";
 	url+="&nowPage=${nowPage}";
-	
 	location.href=url;
 }
 
@@ -23,10 +21,7 @@ function read(bbsno){
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/skin.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginbar.css">
 </head>
-<!-- *********************************************** -->
 <body>
-	<jsp:include page="/menu/top.jsp" flush="false" />
-	<!-- *********************************************** -->
 	<div class=article_skin>
 	<div style="box-shadow:0 0 1em gray;padding:40px">
 <DIV align="left" style="color: #3366cc;font-weight: bold;margin-left: 35px">게시판</DIV><br>
@@ -144,9 +139,6 @@ function read(bbsno){
 		<br> <input type='button' value='등록'
 			onclick="location.href='createForm.jsp'" style="border:none;border:1px solid #d8d8d8;border-radius:7px ;background-color:#ffffff;color:#6c6c6c;font-weight:bold; ;width: 70px; height: 35px">
 	</div>
-
-	<!-- *********************************************** -->
-	<jsp:include page="/menu/bottom.jsp" flush="false" />
 </body>
-<!-- *********************************************** -->
+
 </html>
